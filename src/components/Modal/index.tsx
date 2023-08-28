@@ -2,12 +2,12 @@ import { MouseEventHandler, ReactNode } from 'react'
 
 function Modal({
   onCancel,
-  content,
+  children,
   msg,
   onConfirm,
 }: {
   onCancel: MouseEventHandler
-  content?: ReactNode
+  children?: ReactNode
   msg?: string
   onConfirm: MouseEventHandler
 }) {
@@ -23,8 +23,8 @@ function Modal({
         className="z-1000 fixed left-0 right-0 top-1/2 mx-auto -mt-40 w-96 rounded-lg bg-white px-6 py-6"
         onClick={(e) => e.stopPropagation()}
       >
-        {content !== undefined ? (
-          content
+        {children !== undefined ? (
+          children
         ) : (
           <div className="text-center text-lg">
             {msg !== undefined ? msg : defaultMsg}

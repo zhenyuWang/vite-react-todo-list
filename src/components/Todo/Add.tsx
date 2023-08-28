@@ -53,40 +53,34 @@ function AddTodo({
   }
 
   return (
-    <Modal
-      onCancel={onClose}
-      onConfirm={onAddTodo}
-      content={
-        <div>
-          <div className="flex-align-center flex">
-            <div className="w-20 text-lg leading-8 text-slate-500">title:</div>
-            <input
-              className="h-8 w-72 rounded border border-slate-300 pl-2 text-base focus:border-none focus:border-sky-600 focus:outline-none focus-visible:ring"
-              type="text"
-              ref={titleInputRef}
-              value={title}
-              onInput={onTitleInput}
-              placeholder="Please enter title"
-            />
-          </div>
-          <div className="flex-align-center mt-4 flex">
-            <div className="w-20 text-lg leading-8 text-slate-500">
-              content:
-            </div>
-            <input
-              className="h-8 w-72 rounded border border-slate-300 pl-2 text-base focus:border-none focus:border-sky-600 focus:outline-none focus-visible:ring"
-              type="text"
-              value={content}
-              onInput={onContentInput}
-              placeholder="Please enter content"
-            />
-          </div>
-          {errorText !== '' && (
-            <div className="mt-4 text-red-600">error: {errorText}</div>
-          )}
+    <Modal onCancel={onClose} onConfirm={onAddTodo}>
+      <div>
+        <div className="flex-align-center flex">
+          <div className="w-20 text-lg leading-8 text-slate-500">title:</div>
+          <input
+            className="h-8 w-72 rounded border border-slate-300 pl-2 text-base focus:border-none focus:border-sky-600 focus:outline-none focus-visible:ring"
+            type="text"
+            ref={titleInputRef}
+            value={title}
+            onInput={onTitleInput}
+            placeholder="Please enter title"
+          />
         </div>
-      }
-    />
+        <div className="flex-align-center mt-4 flex">
+          <div className="w-20 text-lg leading-8 text-slate-500">content:</div>
+          <input
+            className="h-8 w-72 rounded border border-slate-300 pl-2 text-base focus:border-none focus:border-sky-600 focus:outline-none focus-visible:ring"
+            type="text"
+            value={content}
+            onInput={onContentInput}
+            placeholder="Please enter content"
+          />
+        </div>
+        {errorText !== '' && (
+          <div className="mt-4 text-red-600">error: {errorText}</div>
+        )}
+      </div>
+    </Modal>
   )
 }
 
