@@ -18,7 +18,7 @@
     "commit-msg": "node scripts/verifyCommit.js"
   },
   "lint-staged": {
-    "packages/**/*.ts?(x)": [
+    "*.{js,jsx,ts,tsx}": [
       "eslint",
       "prettier --parser=typescript --write"
     ]

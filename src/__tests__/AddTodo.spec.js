@@ -10,7 +10,7 @@ describe('Add Todo', () => {
 
   it('click add modal cancel remove modal', async () => {
     render(<App />)
-    await userEvent.click(screen.getByText('Add'))
+    await userEvent.click(screen.getByText('Add1'))
     await userEvent.click(screen.getByText('Cancel'))
     expect(screen.queryByText('title:')).toBeNull()
   })
